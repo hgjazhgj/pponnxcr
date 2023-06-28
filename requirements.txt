@@ -1,0 +1,5 @@
+onnxruntime
+numpy
+opencv-python
+shapely
+pyclipper
