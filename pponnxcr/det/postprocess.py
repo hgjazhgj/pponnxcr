@@ -38,8 +38,8 @@ class DBPostProcess:
                 continue
             box = np.array(box)
 
-            box[:, 0] = np.clip(np.round(box[:, 0] * shape[2]), 0, shape[1])
-            box[:, 1] = np.clip(np.round(box[:, 1] * shape[2]), 0, shape[0])
+            box[:, 0] = np.clip(np.round(box[:, 0] / shape[2]), 0, shape[1])
+            box[:, 1] = np.clip(np.round(box[:, 1] / shape[2]), 0, shape[0])
             boxes.append(box)
             scores.append(score)
         return np.array(boxes, dtype=np.int16), scores

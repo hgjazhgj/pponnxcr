@@ -70,10 +70,10 @@ class TextSystem:
             img_crop_list.append(img_crop)
         if self.use_angle_cls:
             img_crop_list, _, elapse = self.text_classifier(img_crop_list)
-            logger.debug("cls num  : {}, elapse : {}".format(len(img_crop_list), elapse))
+            logger.debug("cls num : {}, elapse : {}".format(len(img_crop_list), elapse))
 
         rec_res, elapse = self.text_recognizer(img_crop_list)
-        logger.debug("rec_res num  : {}, elapse : {}".format(len(rec_res), elapse))
+        logger.debug("rec_res num : {}, elapse : {}".format(len(rec_res), elapse))
         res = []
         for box, rec_reuslt, img_crop in zip(dt_boxes, rec_res, img_crop_list):
             text, score = rec_reuslt

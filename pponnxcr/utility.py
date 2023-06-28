@@ -5,7 +5,6 @@ LANG={
         'det': 'en_PP-OCRv3_det_infer.onnx',
         'rec': 'en_PP-OCRv3_rec_infer.onnx',
         'cls': 'ch_ppocr_mobile_v2.0_cls_infer.onnx',
-        #'dict': 'EN_symbol_dict.txt',
         'dict': 'en_dict.txt',
     },
     'zh': {
@@ -24,11 +23,11 @@ LANG={
 
 
 def get_model_data(lang, step):
-    return pkgutil.get_data(__name__, 'model/' + LANG[lang][step])
+    return pkgutil.get_data(__name__, 'model/' + LANG[lang.lower()][step])
 
 
 def get_character_dict(lang):
-    return pkgutil.get_data(__name__, 'model/' + LANG[lang]['dict']).decode('utf-8').splitlines()
+    return pkgutil.get_data(__name__, 'model/' + LANG[lang.lower()]['dict']).decode('utf-8').splitlines()
 
 
 class OperatorGroup:

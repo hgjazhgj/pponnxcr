@@ -1,6 +1,6 @@
 import setuptools
 
-with open("README.md", "r", encoding='utf-8') as fh:
+with open("readme.md", "r", encoding='utf-8') as fh:
     long_description = fh.read()
 
 with open('requirements.txt', 'r', encoding='utf-8') as f:
@@ -10,7 +10,7 @@ packages = setuptools.find_packages() + ['pponnxcr.model']
 
 setuptools.setup(
     name="pponnxcr",
-    version="1.0",
+    version="1.2",
     author="hgjazhgj",
     author_email="hgjazhgj.jp@gmail.com",
     license='GNU AGPLv3',
