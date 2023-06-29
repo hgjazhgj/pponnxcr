@@ -1,10 +1,10 @@
-# pponnxcr - PaddlePaddle Onnxruntime OCR
+# pponnxcr - PaddlePaddle ONNXruntime OCR
 
-OCR based on onnxruntime with PaddleOCR models  
-Refractor for [ppocr-onnx](https://github.com/triwinds/ppocr-onnx) which implements:  
+OCR based on ONNX Runtime with PaddleOCR models  
+Refractor by [@hgjazhgj](https://github.com/hgjazhgj/) for [ppocr-onnx](https://github.com/triwinds/ppocr-onnx) and implements:  
 
 - Update `rec` model to v3  
-- Remove all unnecessary components, including `draw-ocr`  
+- Remove all unnecessary components e.g. `draw-ocr`  
 - Add En and Ja language support  
 
 ## Install
@@ -41,3 +41,4 @@ Which means that unless commercially licensed, any modification or use of this p
 - [ppocr-onnx](https://github.com/triwinds/ppocr-onnx)  
 - [RapidOCR](https://github.com/RapidAI/RapidOCR)  
 - [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)  
+- [Paddle2ONNX](https://github.com/PaddlePaddle/Paddle2ONNX)
