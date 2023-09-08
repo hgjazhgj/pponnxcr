@@ -10,7 +10,7 @@ packages = setuptools.find_packages() + ['pponnxcr.model']
 
 setuptools.setup(
     name="pponnxcr",
-    version="1.2",
+    version="2.0",
     author="hgjazhgj",
     author_email="hgjazhgj.jp@gmail.com",
     license='GNU AGPLv3',

@@ -5,7 +5,7 @@ Refractor by [@hgjazhgj](https://github.com/hgjazhgj/) for [ppocr-onnx](https://
 
 - Update `rec` model to v3  
 - Remove all unnecessary components e.g. `draw-ocr`  
-- Add En and Ja language support  
+- Add English, Japanese and TraditionalChinese language support  
 
 ## Install
 
@@ -19,15 +19,16 @@ pip install pponnxcr
 from pponnxcr import TextSystem
 import cv2
 
-ZH = TextSystem('zh')
+ZHS = TextSystem('zhs')
+ZHT = TextSystem('zht')
 JA = TextSystem('ja')
 EN = TextSystem('en')
 
 img = cv2.imread('test.png')
 
-ZH.ocr_single_line(img)
-ZH.ocr_lines([img, ...])
-ZH.detect_and_ocr(img)
+ZHS.ocr_single_line(img)
+ZHS.ocr_lines([img, ...])
+ZHS.detect_and_ocr(img)
 ```
 
 ## License
