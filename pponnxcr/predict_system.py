@@ -62,7 +62,14 @@ class TextSystem:
             return []
         img_crop_list = []
 
-        dt_boxes = sorted_boxes(dt_boxes)
+        dt_boxes = sorted(
+            dt_boxes,
+            key=cmp_to_key(lambda x, y:
+                x[0][0] - y[0][0]
+                if -10 < x[0][1] - y[0][1] < 10 else
+                x[0][1] - y[0][1]
+            )
+        )
 
         for bno in range(len(dt_boxes)):
             tmp_box = copy.deepcopy(dt_boxes[bno])
@@ -83,25 +90,11 @@ class TextSystem:
 
 
 class BoxedResult:
-    def __init__(self, box, text_img, ocr_text, score):
+    def __init__(self, box, img, text, score):
         self.box = box
-        self.text_img = text_img
-        self.ocr_text = ocr_text
+        self.img = img
+        self.text = text
         self.score = score
 
-    def __str__(self):
-        return 'BoxedResult[%s, %s]' % (self.ocr_text, self.score)
-
     def __repr__(self):
-        return self.__str__()
-
-
-def sorted_boxes(dt_boxes):
-    return sorted(
-        dt_boxes,
-        key=cmp_to_key(lambda x, y:
-            x[0][0] - y[0][0]
-            if -10 < x[0][1] - y[0][1] < 10 else
-            x[0][1] - y[0][1]
-        )
-    )
+        return f'{type(self).__name__}[{self.text}, {self.score}]'
